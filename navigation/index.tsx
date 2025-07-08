@@ -9,8 +9,11 @@ import Home from '../screens/Home';
 import VaultDetails from '../screens/VaultDetails';
 import ApprovalScreen from '../screens/ApprovalScreen';
 import TransactionLog from '../screens/TransactionLog';
+import WelcomeScreen from '../screens/WelcomeScreen'; // 08-07-2025
+
 
 export type RootStackParamList = {
+  Welcome: undefined;
   Onboarding: undefined;
   Home: undefined;
   VaultDetails: undefined;
@@ -23,7 +26,8 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const AppNavigator: React.FC = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Onboarding">
+      <Stack.Navigator initialRouteName="Welcome">
+        <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Onboarding" component={Onboarding} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="VaultDetails" component={VaultDetails} />
