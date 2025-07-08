@@ -1,3 +1,5 @@
+// navigation/index.tsx
+
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -8,7 +10,6 @@ import VaultDetails from '../screens/VaultDetails';
 import ApprovalScreen from '../screens/ApprovalScreen';
 import TransactionLog from '../screens/TransactionLog';
 
-// 👇 This defines your screen names and params (we’re using no params yet)
 export type RootStackParamList = {
   Onboarding: undefined;
   Home: undefined;
@@ -19,8 +20,7 @@ export type RootStackParamList = {
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-// This is the navigator that will render your screen transitions
-const AppNavigator = () => {
+const AppNavigator: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Onboarding">
